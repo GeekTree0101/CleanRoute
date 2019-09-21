@@ -7,7 +7,7 @@ protocol ShowDisplayLogic: class {
 
 class ShowViewController: ASViewController<ASDisplayNode> {
   
-  // MARK: - UI Props
+  // MARK: - UI Prbops
   lazy var contentNode: ASEditableTextNode = {
     let node = ASEditableTextNode()
     node.isUserInteractionEnabled = false
