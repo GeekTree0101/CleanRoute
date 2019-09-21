@@ -14,10 +14,6 @@ jobs:
     timeout-minutes: 20
     steps:
     - uses: actions/checkout@v1
-    - name: Install Bundler
-      run: | 
-        gem install bundler
-        bundle install
     - name: Install Carthage
       continue-on-error: true
       run: | 
