@@ -1,1 +1,40 @@
+name: ci
 
+on: [push]
+
+jobs:
+  build:
+    name: ci
+    runs-on: macOS-latest
+    strategy:
+      matrix:
+        env:
+          - sdk: iphonesimulator12.2
+            destination: platform=iOS Simulator,name=iPhone XS,OS=12.2
+    timeout-minutes: 20
+    steps:
+    - uses: actions/checkout@v1
+    - name: Install Bundler
+      run: | 
+        gem install bundler
+        bundle install
+    - name: Install Carthage
+      continue-on-error: true
+      run: | 
+        brew install carthage
+        carthage bootstrap --platform iOS
+    - name: Test Automation
+      run: |
+        set -o pipefail && xcodebuild clean build test \
+          -project "$PROJECT" \
+          -scheme "$SCHEME" \
+          -sdk "$SDK" \
+          -destination "$DESTINATION" \
+          -configuration Debug \
+          -enableCodeCoverage YES \
+          CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty -c;
+      env:
+        PROJECT: CleanRoute.xcodeproj
+        SCHEME: CleanRoute
+        SDK: ${{ matrix.env.sdk }}
+        DESTINATION: ${{ matrix.env.destination }}
