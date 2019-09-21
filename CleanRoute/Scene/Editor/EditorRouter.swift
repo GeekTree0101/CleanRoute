@@ -23,7 +23,6 @@ class EditorRouter: EditorDataPassing {
 
 extension EditorRouter: EditorRouterLogic {
   
-  
   func popViewController() {
     switch sourceVC {
     case .some(let showVC as ShowViewController):
