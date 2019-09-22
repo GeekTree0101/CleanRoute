@@ -30,6 +30,7 @@ extension ShowRouter: ShowRouterLogic {
     editorVC.router?.sourceVC = vc
     
     let navVC = UINavigationController(rootViewController: editorVC)
+    navVC.modalPresentationStyle = .fullScreen
     vc?.present(navVC, animated: true, completion: nil)
   }
   
