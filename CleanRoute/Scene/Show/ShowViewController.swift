@@ -26,15 +26,29 @@ class ShowViewController: ASViewController<ASDisplayNode> {
     super.init(node: .init())
     self.node.automaticallyManagesSubnodes = true
     self.node.automaticallyRelayoutOnSafeAreaChanges = true
-    self.node.backgroundColor = .white
+    
     self.node.layoutSpecBlock = { [weak self] (node, _) -> ASLayoutSpec in
-      guard let self = self else { return ASLayoutSpec() }
+      guard let self = self else {
+        return LayoutSpec { EmptyLayout() }
+      }
+      
       var insets = node.safeAreaInsets
       insets.top += 50.0
-      return ASInsetLayoutSpec.init(insets: insets, child: self.contentNode)
+      
+      return LayoutSpec {
+        InsetLayout(insets: insets) {
+          self.contentNode
+        }
+      }
     }
     self.configure()
     self.title = "Viwer"
+    
+    if #available(iOS 13.0, *) {
+      self.node.backgroundColor = .systemBackground
+    } else {
+      self.node.backgroundColor = .white
+    }
   }
   
   required init?(coder aDecoder: NSCoder) {

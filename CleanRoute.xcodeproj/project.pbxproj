@@ -24,6 +24,7 @@
 		DA8F830923345B8E00464477 /* EditorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8F830823345B8E00464477 /* EditorPresenter.swift */; };
 		DA8F830B23345B9600464477 /* EditorRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8F830A23345B9600464477 /* EditorRouter.swift */; };
 		DA8F830D23345B9E00464477 /* EditorModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8F830C23345B9E00464477 /* EditorModels.swift */; };
+		DA9862A2233904EE008DBC16 /* SpecBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9862A1233904EE008DBC16 /* SpecBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		DA8F830823345B8E00464477 /* EditorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorPresenter.swift; sourceTree = "<group>"; };
 		DA8F830A23345B9600464477 /* EditorRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorRouter.swift; sourceTree = "<group>"; };
 		DA8F830C23345B9E00464477 /* EditorModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorModels.swift; sourceTree = "<group>"; };
+		DA9862A1233904EE008DBC16 /* SpecBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		DA62220F23344ED100570454 /* CleanRoute */ = {
 			isa = PBXGroup;
 			children = (
+				DA9862A0233904E0008DBC16 /* Extensions */,
 				DA8F82F62334569500464477 /* Scene */,
 				DA62221023344ED100570454 /* AppDelegate.swift */,
 				DA62221723344ED100570454 /* Assets.xcassets */,
@@ -160,6 +163,14 @@
 				DA8F830623345B7B00464477 /* EditorInteractor.swift */,
 			);
 			path = Editor;
+			sourceTree = "<group>";
+		};
+		DA9862A0233904E0008DBC16 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DA9862A1233904EE008DBC16 /* SpecBuilder.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +319,7 @@
 			files = (
 				DA8F82FC233456B700464477 /* ShowViewInteractor.swift in Sources */,
 				DA62221123344ED100570454 /* AppDelegate.swift in Sources */,
+				DA9862A2233904EE008DBC16 /* SpecBuilder.swift in Sources */,
 				DA8F830723345B7B00464477 /* EditorInteractor.swift in Sources */,
 				DA8F8302233456D300464477 /* ShowViewRouter.swift in Sources */,
 				DA8F8300233456C800464477 /* ShowViewModels.swift in Sources */,
