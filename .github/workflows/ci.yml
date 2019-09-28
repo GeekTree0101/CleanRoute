@@ -9,8 +9,8 @@ jobs:
     strategy:
       matrix:
         env:
-          - sdk: iphonesimulator12.4
-            destination: platform=iOS Simulator,name=iPhone XS,OS=12.4
+          - sdk: iphonesimulator13.0
+            destination: platform=iOS Simulator,name=iPhone 11,OS=13.0
     timeout-minutes: 20
     steps:
     - uses: actions/checkout@v1
